@@ -60,7 +60,7 @@ func GetUserByEmail(pool *pgxpool.Pool, email string) (*models.User, error) {
 	return &user, nil
 }
 
-func GetUserByID(pool *pgxpool.Pool, id int) (*models.User, error) {
+func GetUserByID(pool *pgxpool.Pool, id string) (*models.User, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
