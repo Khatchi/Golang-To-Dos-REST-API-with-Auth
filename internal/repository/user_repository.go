@@ -21,7 +21,6 @@ func CreateUser(pool *pgxpool.Pool, user *models.User) (*models.User, error) {
 	err := pool.QueryRow(ctx, query, user.Email, user.Password).Scan(
 		&user.ID,
 		&user.Email,
-		&user.Password,
 		&user.CreatedAt,
 		&user.UpdatedAt,
 	)
